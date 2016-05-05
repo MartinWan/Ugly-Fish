@@ -1,0 +1,539 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5B50DE0C1CD94FF700B9B4DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B50DE0B1CD94FF700B9B4DF /* AppDelegate.swift */; };
+		5B50DE0E1CD94FF700B9B4DF /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B50DE0D1CD94FF700B9B4DF /* art.scnassets */; };
+		5B50DE101CD94FF700B9B4DF /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B50DE0F1CD94FF700B9B4DF /* GameViewController.swift */; };
+		5B50DE131CD94FF700B9B4DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B50DE111CD94FF700B9B4DF /* Main.storyboard */; };
+		5B50DE181CD94FF700B9B4DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B50DE161CD94FF700B9B4DF /* LaunchScreen.storyboard */; };
+		5B50DE231CD94FF700B9B4DF /* Ugly_FishTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B50DE221CD94FF700B9B4DF /* Ugly_FishTests.swift */; };
+		5B50DE2E1CD94FF700B9B4DF /* Ugly_FishUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B50DE2D1CD94FF700B9B4DF /* Ugly_FishUITests.swift */; };
+		5B50DE831CD95AF600B9B4DF /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B50DE811CD95AF600B9B4DF /* GameScene.swift */; };
+		5B50DE851CD9639D00B9B4DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B50DE141CD94FF700B9B4DF /* Assets.xcassets */; };
+		5B50DE871CD96CB200B9B4DF /* GenericNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B50DE861CD96CB200B9B4DF /* GenericNode.swift */; };
+		5B50DE891CD96E4300B9B4DF /* RockNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B50DE881CD96E4300B9B4DF /* RockNode.swift */; };
+		5B50DE8B1CD9708300B9B4DF /* FoodNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B50DE8A1CD9708300B9B4DF /* FoodNode.swift */; };
+		5BC326721CD98EB700828045 /* GameHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC326711CD98EB700828045 /* GameHandler.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5B50DE1F1CD94FF700B9B4DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B50DE001CD94FF700B9B4DF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B50DE071CD94FF700B9B4DF;
+			remoteInfo = "Ugly Fish";
+		};
+		5B50DE2A1CD94FF700B9B4DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B50DE001CD94FF700B9B4DF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B50DE071CD94FF700B9B4DF;
+			remoteInfo = "Ugly Fish";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5B50DE081CD94FF700B9B4DF /* Ugly Fish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ugly Fish.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B50DE0B1CD94FF700B9B4DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5B50DE0D1CD94FF700B9B4DF /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		5B50DE0F1CD94FF700B9B4DF /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		5B50DE121CD94FF700B9B4DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5B50DE141CD94FF700B9B4DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5B50DE171CD94FF700B9B4DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5B50DE191CD94FF700B9B4DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B50DE1E1CD94FF700B9B4DF /* Ugly FishTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Ugly FishTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B50DE221CD94FF700B9B4DF /* Ugly_FishTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ugly_FishTests.swift; sourceTree = "<group>"; };
+		5B50DE241CD94FF700B9B4DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B50DE291CD94FF700B9B4DF /* Ugly FishUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Ugly FishUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B50DE2D1CD94FF700B9B4DF /* Ugly_FishUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ugly_FishUITests.swift; sourceTree = "<group>"; };
+		5B50DE2F1CD94FF700B9B4DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B50DE811CD95AF600B9B4DF /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		5B50DE861CD96CB200B9B4DF /* GenericNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericNode.swift; sourceTree = "<group>"; };
+		5B50DE881CD96E4300B9B4DF /* RockNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RockNode.swift; sourceTree = "<group>"; };
+		5B50DE8A1CD9708300B9B4DF /* FoodNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodNode.swift; sourceTree = "<group>"; };
+		5BC326711CD98EB700828045 /* GameHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameHandler.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5B50DE051CD94FF700B9B4DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B50DE1B1CD94FF700B9B4DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B50DE261CD94FF700B9B4DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5B50DDFF1CD94FF700B9B4DF = {
+			isa = PBXGroup;
+			children = (
+				5B50DE0A1CD94FF700B9B4DF /* Ugly Fish */,
+				5B50DE211CD94FF700B9B4DF /* Ugly FishTests */,
+				5B50DE2C1CD94FF700B9B4DF /* Ugly FishUITests */,
+				5B50DE091CD94FF700B9B4DF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5B50DE091CD94FF700B9B4DF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5B50DE081CD94FF700B9B4DF /* Ugly Fish.app */,
+				5B50DE1E1CD94FF700B9B4DF /* Ugly FishTests.xctest */,
+				5B50DE291CD94FF700B9B4DF /* Ugly FishUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5B50DE0A1CD94FF700B9B4DF /* Ugly Fish */ = {
+			isa = PBXGroup;
+			children = (
+				5B50DE0B1CD94FF700B9B4DF /* AppDelegate.swift */,
+				5BC326711CD98EB700828045 /* GameHandler.swift */,
+				5B50DE0D1CD94FF700B9B4DF /* art.scnassets */,
+				5B50DE0F1CD94FF700B9B4DF /* GameViewController.swift */,
+				5B50DE111CD94FF700B9B4DF /* Main.storyboard */,
+				5B50DE811CD95AF600B9B4DF /* GameScene.swift */,
+				5B50DE8A1CD9708300B9B4DF /* FoodNode.swift */,
+				5B50DE861CD96CB200B9B4DF /* GenericNode.swift */,
+				5B50DE881CD96E4300B9B4DF /* RockNode.swift */,
+				5B50DE141CD94FF700B9B4DF /* Assets.xcassets */,
+				5B50DE161CD94FF700B9B4DF /* LaunchScreen.storyboard */,
+				5B50DE191CD94FF700B9B4DF /* Info.plist */,
+			);
+			path = "Ugly Fish";
+			sourceTree = "<group>";
+		};
+		5B50DE211CD94FF700B9B4DF /* Ugly FishTests */ = {
+			isa = PBXGroup;
+			children = (
+				5B50DE221CD94FF700B9B4DF /* Ugly_FishTests.swift */,
+				5B50DE241CD94FF700B9B4DF /* Info.plist */,
+			);
+			path = "Ugly FishTests";
+			sourceTree = "<group>";
+		};
+		5B50DE2C1CD94FF700B9B4DF /* Ugly FishUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5B50DE2D1CD94FF700B9B4DF /* Ugly_FishUITests.swift */,
+				5B50DE2F1CD94FF700B9B4DF /* Info.plist */,
+			);
+			path = "Ugly FishUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5B50DE071CD94FF700B9B4DF /* Ugly Fish */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B50DE321CD94FF700B9B4DF /* Build configuration list for PBXNativeTarget "Ugly Fish" */;
+			buildPhases = (
+				5B50DE041CD94FF700B9B4DF /* Sources */,
+				5B50DE051CD94FF700B9B4DF /* Frameworks */,
+				5B50DE061CD94FF700B9B4DF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Ugly Fish";
+			productName = "Ugly Fish";
+			productReference = 5B50DE081CD94FF700B9B4DF /* Ugly Fish.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5B50DE1D1CD94FF700B9B4DF /* Ugly FishTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B50DE351CD94FF700B9B4DF /* Build configuration list for PBXNativeTarget "Ugly FishTests" */;
+			buildPhases = (
+				5B50DE1A1CD94FF700B9B4DF /* Sources */,
+				5B50DE1B1CD94FF700B9B4DF /* Frameworks */,
+				5B50DE1C1CD94FF700B9B4DF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5B50DE201CD94FF700B9B4DF /* PBXTargetDependency */,
+			);
+			name = "Ugly FishTests";
+			productName = "Ugly FishTests";
+			productReference = 5B50DE1E1CD94FF700B9B4DF /* Ugly FishTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5B50DE281CD94FF700B9B4DF /* Ugly FishUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B50DE381CD94FF700B9B4DF /* Build configuration list for PBXNativeTarget "Ugly FishUITests" */;
+			buildPhases = (
+				5B50DE251CD94FF700B9B4DF /* Sources */,
+				5B50DE261CD94FF700B9B4DF /* Frameworks */,
+				5B50DE271CD94FF700B9B4DF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5B50DE2B1CD94FF700B9B4DF /* PBXTargetDependency */,
+			);
+			name = "Ugly FishUITests";
+			productName = "Ugly FishUITests";
+			productReference = 5B50DE291CD94FF700B9B4DF /* Ugly FishUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5B50DE001CD94FF700B9B4DF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Martin ";
+				TargetAttributes = {
+					5B50DE071CD94FF700B9B4DF = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 2M6L5N45PT;
+					};
+					5B50DE1D1CD94FF700B9B4DF = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 2M6L5N45PT;
+						TestTargetID = 5B50DE071CD94FF700B9B4DF;
+					};
+					5B50DE281CD94FF700B9B4DF = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 2M6L5N45PT;
+						TestTargetID = 5B50DE071CD94FF700B9B4DF;
+					};
+				};
+			};
+			buildConfigurationList = 5B50DE031CD94FF700B9B4DF /* Build configuration list for PBXProject "Ugly Fish" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5B50DDFF1CD94FF700B9B4DF;
+			productRefGroup = 5B50DE091CD94FF700B9B4DF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5B50DE071CD94FF700B9B4DF /* Ugly Fish */,
+				5B50DE1D1CD94FF700B9B4DF /* Ugly FishTests */,
+				5B50DE281CD94FF700B9B4DF /* Ugly FishUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5B50DE061CD94FF700B9B4DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B50DE0E1CD94FF700B9B4DF /* art.scnassets in Resources */,
+				5B50DE181CD94FF700B9B4DF /* LaunchScreen.storyboard in Resources */,
+				5B50DE131CD94FF700B9B4DF /* Main.storyboard in Resources */,
+				5B50DE851CD9639D00B9B4DF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B50DE1C1CD94FF700B9B4DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B50DE271CD94FF700B9B4DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5B50DE041CD94FF700B9B4DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B50DE831CD95AF600B9B4DF /* GameScene.swift in Sources */,
+				5B50DE101CD94FF700B9B4DF /* GameViewController.swift in Sources */,
+				5B50DE871CD96CB200B9B4DF /* GenericNode.swift in Sources */,
+				5BC326721CD98EB700828045 /* GameHandler.swift in Sources */,
+				5B50DE891CD96E4300B9B4DF /* RockNode.swift in Sources */,
+				5B50DE8B1CD9708300B9B4DF /* FoodNode.swift in Sources */,
+				5B50DE0C1CD94FF700B9B4DF /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B50DE1A1CD94FF700B9B4DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B50DE231CD94FF700B9B4DF /* Ugly_FishTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B50DE251CD94FF700B9B4DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B50DE2E1CD94FF700B9B4DF /* Ugly_FishUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5B50DE201CD94FF700B9B4DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5B50DE071CD94FF700B9B4DF /* Ugly Fish */;
+			targetProxy = 5B50DE1F1CD94FF700B9B4DF /* PBXContainerItemProxy */;
+		};
+		5B50DE2B1CD94FF700B9B4DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5B50DE071CD94FF700B9B4DF /* Ugly Fish */;
+			targetProxy = 5B50DE2A1CD94FF700B9B4DF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5B50DE111CD94FF700B9B4DF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B50DE121CD94FF700B9B4DF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5B50DE161CD94FF700B9B4DF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B50DE171CD94FF700B9B4DF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5B50DE301CD94FF700B9B4DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5B50DE311CD94FF700B9B4DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5B50DE331CD94FF700B9B4DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Ugly Fish/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Martin.Ugly-Fish";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5B50DE341CD94FF700B9B4DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Ugly Fish/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Martin.Ugly-Fish";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		5B50DE361CD94FF700B9B4DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = "Ugly FishTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Martin.Ugly-FishTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ugly Fish.app/Ugly Fish";
+			};
+			name = Debug;
+		};
+		5B50DE371CD94FF700B9B4DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Ugly FishTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Martin.Ugly-FishTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ugly Fish.app/Ugly Fish";
+			};
+			name = Release;
+		};
+		5B50DE391CD94FF700B9B4DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = "Ugly FishUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Martin.Ugly-FishUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Ugly Fish";
+			};
+			name = Debug;
+		};
+		5B50DE3A1CD94FF700B9B4DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Ugly FishUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Martin.Ugly-FishUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Ugly Fish";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5B50DE031CD94FF700B9B4DF /* Build configuration list for PBXProject "Ugly Fish" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B50DE301CD94FF700B9B4DF /* Debug */,
+				5B50DE311CD94FF700B9B4DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B50DE321CD94FF700B9B4DF /* Build configuration list for PBXNativeTarget "Ugly Fish" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B50DE331CD94FF700B9B4DF /* Debug */,
+				5B50DE341CD94FF700B9B4DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B50DE351CD94FF700B9B4DF /* Build configuration list for PBXNativeTarget "Ugly FishTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B50DE361CD94FF700B9B4DF /* Debug */,
+				5B50DE371CD94FF700B9B4DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B50DE381CD94FF700B9B4DF /* Build configuration list for PBXNativeTarget "Ugly FishUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B50DE391CD94FF700B9B4DF /* Debug */,
+				5B50DE3A1CD94FF700B9B4DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5B50DE001CD94FF700B9B4DF /* Project object */;
+}
