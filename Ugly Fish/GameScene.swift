@@ -16,6 +16,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var player = SKSpriteNode(color: UIColor.brownColor(), size: CGSize.init(width: 0, height: 0))
     var xAccelearation = CGFloat(0.0)
     let motionManager = CMMotionManager()
+    let tapToStart = SKSpriteNode(imageNamed: "tapToStart")
+    
+    /* for food, rock generation on levels */
+    var lastLevelStartingHeight = 0
+    let LEVEL_HEIGHT = 10000
+    let SPACING = 200 // height between nodes on level
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -46,29 +52,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         player.physicsBody!.contactTestBitMask = CollisionBitMask.Food | CollisionBitMask.Rock
         foreground.addChild(player)
 
-
-        // init rocks
-        // TODO: implement plist for levels
-        for yPosition in 0...200 {
-            let xPosition = random() % Int(self.size.width)
-            
-            //  TODO: rock patterns and randomized types
-            let type = RockType.breakableRock
-            let rock = createRockAtPosition(CGPoint(x: xPosition, y: yPosition * 100), ofType: type)
+        // init tap to start
+        tapToStart.position = CGPoint(x: size.width/2, y: 300)
+        tapToStart.size = CGSize(width: size.width * 0.7, height: size.height * 0.1)
+        foreground.addChild(tapToStart)
         
-            foreground.addChild(rock)
-        }
-        
-        // init food
-        for yPosition in 0...200 {
-            let xPosition = random() % Int(self.size.width)
-            
-            //  TODO: rock patterns and randomized types
-            let type = FoodType.Normalfood
-            let food = createFoodAtPosition(CGPoint(x: xPosition, y: yPosition * 100), ofType: type)
-            
-            foreground.addChild(food)
-        }
+        // create level's food and obstacles
+        initRocksAtHeight(0)
+        initFoodAtHeight(0)
         
         // init physics world
         physicsWorld.gravity = CGVector(dx: 0, dy: 0)
@@ -85,6 +76,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func update(currentTime: NSTimeInterval) {
+        
+        // regenerate level if needed
+        if player.position.y > CGFloat(lastLevelStartingHeight + LEVEL_HEIGHT) { // player has passed all generated objects on level
+            lastLevelStartingHeight = Int(player.position.y)
+            initRocksAtHeight(Int(player.position.y))
+            initFoodAtHeight(Int(player.position.y))
+        }
         
         // scroll background up if needed
         if player.position.y > 200 {
@@ -120,6 +118,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        
+        if player.physicsBody!.dynamic {
+            return
+        }
+        
+        tapToStart.removeFromParent()
+        
         player.physicsBody!.dynamic = true
         player.physicsBody!.velocity = CGVector(dx: 0, dy: 300)
     }
@@ -135,6 +140,48 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         (otherNode as! GenericNode).collisionWithPlayer(player)
+    }
+    
+    func initRocksAtHeight(height: Int) -> Void {
+        var y = height
+
+        while y < height + LEVEL_HEIGHT {
+            
+            let x = random() % Int(size.width)
+            
+            var type:RockType
+            if random() % 2 == 0 {
+                type = RockType.breakableRock
+            } else {
+                type = RockType.normalRock
+            }
+            
+            let rock = createRockAtPosition(CGPoint(x: x, y: y), ofType: type)
+            foreground.addChild(rock)
+            
+            y += SPACING
+        }
+    }
+    
+    func initFoodAtHeight(height: Int) -> Void {
+        var y = height
+
+        while y < height + LEVEL_HEIGHT {
+            
+            let x = random() % Int(size.width)
+            
+            var type:FoodType
+            if random() % 2 == 0 {
+                type = FoodType.Normalfood
+            } else {
+                type = FoodType.specialfood
+            }
+            
+            let food = createFoodAtPosition(CGPoint(x: x, y: y), ofType: type)
+            foreground.addChild(food)
+            
+            y += SPACING
+        }
     }
     
     func createRockAtPosition(position: CGPoint, ofType type:RockType) -> RockNode {
