@@ -21,7 +21,6 @@ class RockNode: GenericNode {
     override func collisionWithPlayer(player: SKNode) {
         
         if rockType == RockType.breakableRock {
-            
             // slow down player upwards velocity
             player.physicsBody?.velocity.dy *= 0.8
             self.removeFromParent()

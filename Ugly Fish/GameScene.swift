@@ -13,9 +13,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var background = SKNode()
     var foreground = SKNode()
+    var hud = SKNode()
+    
     var player = SKSpriteNode(color: UIColor.brownColor(), size: CGSize.init(width: 0, height: 0))
     var xAccelearation = CGFloat(0.0)
     let motionManager = CMMotionManager()
+    
+    let scoreLabel = SKLabelNode(fontNamed: "Helvetica")
+    var score = 0
     let tapToStart = SKSpriteNode(imageNamed: "tapToStart")
     
     /* for food, rock generation on levels */
@@ -31,10 +36,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         super.init(size: size)
         
         // init background & foreground
-        // TODO: CREATE & LOAD OCEAN GRAPHIC
-        backgroundColor = SKColor.blueColor()
+        backgroundColor = SKColor.blueColor()  // TODO: CREATE & LOAD OCEAN GRAPHIC
         addChild(background)
         addChild(foreground)
+        addChild(hud)
         
         // init player
         player = SKSpriteNode(imageNamed: "player")
@@ -56,6 +61,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         tapToStart.position = CGPoint(x: size.width/2, y: 300)
         tapToStart.size = CGSize(width: size.width * 0.7, height: size.height * 0.1)
         foreground.addChild(tapToStart)
+        
+        // init score label
+        let scoreLabelImage = SKSpriteNode(imageNamed: "food")
+        scoreLabelImage.position = CGPoint(x: 40, y: size.height - 50)
+        scoreLabel.text = "0"
+        scoreLabel.position = CGPoint(x: 80, y: size.height - 50)
+        hud.addChild(scoreLabelImage)
+        hud.addChild(scoreLabel)
         
         // create level's food and obstacles
         initRocksAtHeight(0)
@@ -92,14 +105,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         // remove rock nodes off screen
         foreground.enumerateChildNodesWithName("rock") { (node, stop) -> Void in
-            let rock = node as! GenericNode
-            rock.shouldRemoveNode(self.player.position.y)
+            if node.position.y < self.player.position.y - 300 {
+                self.removeFromParent()
+            }
         }
-        
+            
         // remove food nodes off screen
         foreground.enumerateChildNodesWithName("food") { (node, stop) -> Void in
-            let food = node as! GenericNode
-            food.shouldRemoveNode(self.player.position.y)
+            if node.position.y < self.player.position.y - 300 {
+                self.removeFromParent()
+            }
         }
     }
     
@@ -139,7 +154,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             otherNode = contact.bodyB.node
         }
         
-        (otherNode as! GenericNode).collisionWithPlayer(player)
+        (otherNode as! GenericNode).collisionWithPlayer(player) //colisionWithPlayer is implemented by subclasses of GenericNode
+        
+        if otherNode is FoodNode {
+            score += 1
+            scoreLabel.text = String(score)
+        } 
+   
     }
     
     func initRocksAtHeight(height: Int) -> Void {

@@ -17,13 +17,9 @@ struct CollisionBitMask {
 
 class GenericNode: SKNode {
     
+    
     func collisionWithPlayer(player: SKNode) {
         // intentionally empty
     }
     
-    func shouldRemoveNode(playerY: CGFloat) {
-        if playerY > self.position.y + 300 {
-            self.removeFromParent()
-        }
-    }
 }
