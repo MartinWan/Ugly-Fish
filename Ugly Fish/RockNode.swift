@@ -14,20 +14,9 @@ enum RockType:Int {
     case breakableRock = 1
 }
 
-class RockNode: GenericNode {
+class RockNode: SKNode {
     
     var rockType:RockType!
-    
-    override func collisionWithPlayer(player: SKNode) {
-        
-        if rockType == RockType.breakableRock {
-            // slow down player upwards velocity
-            player.physicsBody?.velocity.dy *= 0.8
-            self.removeFromParent()
-            
-        } else { // rockType is unbreakable
-            player.physicsBody?.velocity.dy = -0.8
-        }
-        
-    }
+
 }
+ 

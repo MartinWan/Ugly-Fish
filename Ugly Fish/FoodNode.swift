@@ -13,13 +13,8 @@ enum FoodType:Int {
     case specialfood = 1
 }
 
-class FoodNode: GenericNode {
+class FoodNode: SKNode {
     
     var foodType:FoodType!
-    
-    override func collisionWithPlayer(player: SKNode) {
-        player.physicsBody?.velocity = CGVector(dx: player.physicsBody!.velocity.dx, dy: 400)
-        
-        self.removeFromParent()
-    }
+
 }

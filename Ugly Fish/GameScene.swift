@@ -9,6 +9,12 @@
 import SpriteKit
 import CoreMotion
 
+struct CollisionBitMask {
+    static let Player:UInt32 = 0x00
+    static let Food:UInt32 = 0x01
+    static let Rock:UInt32 = 0x02
+}
+
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var background = SKNode()
@@ -153,14 +159,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         } else {
             otherNode = contact.bodyB.node
         }
-        
-        (otherNode as! GenericNode).collisionWithPlayer(player) //colisionWithPlayer is implemented by subclasses of GenericNode
-        
+ 
         if otherNode is FoodNode {
+            player.physicsBody?.velocity = CGVector(dx: player.physicsBody!.velocity.dx, dy: 400)
+            otherNode.removeFromParent()
             score += 1
             scoreLabel.text = String(score)
-        } 
-   
+        }
+        
+        if otherNode is RockNode {
+            if (otherNode as! RockNode).rockType == RockType.breakableRock {
+                // slow down player upwards velocity
+                player.physicsBody?.velocity.dy *= 0.8
+                otherNode.removeFromParent()
+                
+            } else { // rockType is unbreakable
+                player.physicsBody?.velocity.dy = -0.8
+            }
+        }
+        
     }
     
     func initRocksAtHeight(height: Int) -> Void {
