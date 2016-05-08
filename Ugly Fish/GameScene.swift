@@ -45,6 +45,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         // init background & foreground
         backgroundColor = SKColor.blueColor()  // TODO: CREATE & LOAD OCEAN GRAPHIC
+
+        initBackgroundAtHeight(0)
         addChild(background)
         addChild(foreground)
         addChild(hud)
@@ -115,6 +117,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // regenerate level if needed
         if player.position.y > CGFloat(lastLevelStartingHeight + LEVEL_HEIGHT) { // player has passed all generated objects on level
             lastLevelStartingHeight = Int(player.position.y)
+            initBackgroundAtHeight(Int(player.position.y))
             initRocksAtHeight(Int(player.position.y))
             initFoodAtHeight(Int(player.position.y))
         }
@@ -207,6 +210,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
         }
         
+    }
+    
+    func initBackgroundAtHeight(height: Int) -> Void {
+        var y = height
+        
+        while y < height + LEVEL_HEIGHT {
+            
+            
+            let backgroundImage = SKSpriteNode(imageNamed: "ocean")
+            backgroundImage.position = CGPoint(x: Int(size.width / 2), y: y)
+            background.addChild(backgroundImage)
+           
+            
+            y += SPACING
+        }
     }
     
     func initRocksAtHeight(height: Int) -> Void {
