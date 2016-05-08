@@ -10,9 +10,9 @@ import SpriteKit
 import CoreMotion
 
 struct CollisionBitMask {
-    static let Player:UInt32 = 0x00
-    static let Food:UInt32 = 0x01
-    static let Rock:UInt32 = 0x02
+    static let Player:UInt32 = 0x01
+    static let Food:UInt32 = 0x02
+    static let Rock:UInt32 = 0x03
 }
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
@@ -21,7 +21,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var foreground = SKNode()
     var hud = SKNode()
     
-    var player = SKSpriteNode(color: UIColor.brownColor(), size: CGSize.init(width: 0, height: 0))
+    var player = SKSpriteNode(imageNamed: "player")
+    var uglyFish = SKSpriteNode(imageNamed: "uglyFish")
+    
     var xAccelearation = CGFloat(0.0)
     let motionManager = CMMotionManager()
     
@@ -48,9 +50,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addChild(hud)
         
         // init player
-        player = SKSpriteNode(imageNamed: "player")
-        player.position = CGPoint(x: self.size.width/2, y: 80)
-        player.physicsBody = SKPhysicsBody(circleOfRadius: player.size.width/2)
+        player.position = CGPoint(x: self.size.width/2, y: 150)
+        player.physicsBody = SKPhysicsBody(circleOfRadius: player.size.width / 2)
         player.physicsBody!.dynamic = false
         player.physicsBody!.allowsRotation = false
         player.physicsBody!.restitution = 1
@@ -59,10 +60,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         player.physicsBody!.linearDamping = 0
         player.physicsBody!.usesPreciseCollisionDetection = true
         player.physicsBody!.categoryBitMask = CollisionBitMask.Player
-        player.physicsBody!.collisionBitMask = 0
-        player.physicsBody!.contactTestBitMask = CollisionBitMask.Food | CollisionBitMask.Rock
+        player.physicsBody!.collisionBitMask = 0 // don't want player to ellastically (bounce) off other sprite nodes
+        player.physicsBody!.contactTestBitMask = CollisionBitMask.Player | CollisionBitMask.Food | CollisionBitMask.Rock
         foreground.addChild(player)
-
+        
+        // init ugly fish behind player
+        uglyFish.position = CGPoint(x: self.size.width / 2, y: -200)
+        uglyFish.physicsBody = SKPhysicsBody(rectangleOfSize: CGSize(width: size.width, height: 10))
+        uglyFish.physicsBody!.dynamic = false
+        uglyFish.physicsBody!.allowsRotation = false
+        uglyFish.physicsBody!.allowsRotation = false
+        uglyFish.physicsBody!.restitution = 1
+        uglyFish.physicsBody!.friction = 0
+        uglyFish.physicsBody!.linearDamping = 0
+        uglyFish.physicsBody!.usesPreciseCollisionDetection = true
+        uglyFish.physicsBody!.categoryBitMask = CollisionBitMask.Player
+        uglyFish.physicsBody!.collisionBitMask = 0
+        uglyFish.physicsBody!.contactTestBitMask = CollisionBitMask.Player
+        foreground.addChild(uglyFish)
+        
         // init tap to start
         tapToStart.position = CGPoint(x: size.width/2, y: 300)
         tapToStart.size = CGSize(width: size.width * 0.7, height: size.height * 0.1)
@@ -147,13 +163,26 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         tapToStart.removeFromParent()
         
         player.physicsBody!.dynamic = true
-        player.physicsBody!.velocity = CGVector(dx: 0, dy: 300)
+        player.physicsBody!.velocity = CGVector(dx: 0, dy: 250)
+        
+        uglyFish.physicsBody!.dynamic = true
+        uglyFish.physicsBody!.velocity = player.physicsBody!.velocity
     }
+    
+    
     
     func didBeginContact(contact: SKPhysicsContact) {
         var otherNode:SKNode!
         
-        // set otherNode to non-player node
+        if contact.bodyA.node == player && contact.bodyB.node == uglyFish {
+            endGame()
+        }
+        
+        if contact.bodyB.node == player && contact.bodyA.node == uglyFish {
+            endGame()
+        }
+        
+        // set otherNode to non-player or non-ugly-fish node
         if contact.bodyA.node != player {
             otherNode = contact.bodyA.node
         } else {
@@ -161,7 +190,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
  
         if otherNode is FoodNode {
-            player.physicsBody?.velocity = CGVector(dx: player.physicsBody!.velocity.dx, dy: 400)
+            player.physicsBody?.velocity = CGVector(dx: player.physicsBody!.velocity.dx, dy: 250)
             otherNode.removeFromParent()
             score += 1
             scoreLabel.text = String(score)
@@ -174,7 +203,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 otherNode.removeFromParent()
                 
             } else { // rockType is unbreakable
-                player.physicsBody?.velocity.dy = -0.8
+                player.physicsBody?.velocity.dy *= 0.6
             }
         }
         
@@ -265,4 +294,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         return node
     }
+
+    func endGame() {
+        let transition = SKTransition.doorsCloseHorizontalWithDuration(1)
+        let endScene = EndScene(size: self.size, score: score)
+        self.view?.presentScene(endScene, transition: transition)
+    }
+    
 }
+
+
+

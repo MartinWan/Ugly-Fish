@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B22ADA61CDEB07A00F03971 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B22ADA51CDEB07A00F03971 /* Assets.xcassets */; };
+		5B22ADA81CDEC15C00F03971 /* EndScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B22ADA71CDEC15C00F03971 /* EndScene.swift */; };
 		5B50DE0C1CD94FF700B9B4DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B50DE0B1CD94FF700B9B4DF /* AppDelegate.swift */; };
-		5B50DE0E1CD94FF700B9B4DF /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B50DE0D1CD94FF700B9B4DF /* art.scnassets */; };
 		5B50DE101CD94FF700B9B4DF /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B50DE0F1CD94FF700B9B4DF /* GameViewController.swift */; };
 		5B50DE131CD94FF700B9B4DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B50DE111CD94FF700B9B4DF /* Main.storyboard */; };
 		5B50DE181CD94FF700B9B4DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B50DE161CD94FF700B9B4DF /* LaunchScreen.storyboard */; };
 		5B50DE231CD94FF700B9B4DF /* Ugly_FishTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B50DE221CD94FF700B9B4DF /* Ugly_FishTests.swift */; };
 		5B50DE2E1CD94FF700B9B4DF /* Ugly_FishUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B50DE2D1CD94FF700B9B4DF /* Ugly_FishUITests.swift */; };
 		5B50DE831CD95AF600B9B4DF /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B50DE811CD95AF600B9B4DF /* GameScene.swift */; };
-		5B50DE851CD9639D00B9B4DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B50DE141CD94FF700B9B4DF /* Assets.xcassets */; };
 		5B50DE891CD96E4300B9B4DF /* RockNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B50DE881CD96E4300B9B4DF /* RockNode.swift */; };
 		5B50DE8B1CD9708300B9B4DF /* FoodNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B50DE8A1CD9708300B9B4DF /* FoodNode.swift */; };
 /* End PBXBuildFile section */
@@ -38,12 +38,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5B22ADA51CDEB07A00F03971 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5B22ADA71CDEC15C00F03971 /* EndScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndScene.swift; sourceTree = "<group>"; };
 		5B50DE081CD94FF700B9B4DF /* Ugly Fish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ugly Fish.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B50DE0B1CD94FF700B9B4DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5B50DE0D1CD94FF700B9B4DF /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		5B50DE0F1CD94FF700B9B4DF /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		5B50DE121CD94FF700B9B4DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		5B50DE141CD94FF700B9B4DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B50DE171CD94FF700B9B4DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B50DE191CD94FF700B9B4DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B50DE1E1CD94FF700B9B4DF /* Ugly FishTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Ugly FishTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,14 +105,14 @@
 		5B50DE0A1CD94FF700B9B4DF /* Ugly Fish */ = {
 			isa = PBXGroup;
 			children = (
+				5B22ADA51CDEB07A00F03971 /* Assets.xcassets */,
 				5B50DE0B1CD94FF700B9B4DF /* AppDelegate.swift */,
-				5B50DE0D1CD94FF700B9B4DF /* art.scnassets */,
 				5B50DE0F1CD94FF700B9B4DF /* GameViewController.swift */,
 				5B50DE111CD94FF700B9B4DF /* Main.storyboard */,
 				5B50DE811CD95AF600B9B4DF /* GameScene.swift */,
+				5B22ADA71CDEC15C00F03971 /* EndScene.swift */,
 				5B50DE8A1CD9708300B9B4DF /* FoodNode.swift */,
 				5B50DE881CD96E4300B9B4DF /* RockNode.swift */,
-				5B50DE141CD94FF700B9B4DF /* Assets.xcassets */,
 				5B50DE161CD94FF700B9B4DF /* LaunchScreen.storyboard */,
 				5B50DE191CD94FF700B9B4DF /* Info.plist */,
 			);
@@ -244,10 +244,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B50DE0E1CD94FF700B9B4DF /* art.scnassets in Resources */,
 				5B50DE181CD94FF700B9B4DF /* LaunchScreen.storyboard in Resources */,
+				5B22ADA61CDEB07A00F03971 /* Assets.xcassets in Resources */,
 				5B50DE131CD94FF700B9B4DF /* Main.storyboard in Resources */,
-				5B50DE851CD9639D00B9B4DF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B22ADA81CDEC15C00F03971 /* EndScene.swift in Sources */,
 				5B50DE831CD95AF600B9B4DF /* GameScene.swift in Sources */,
 				5B50DE101CD94FF700B9B4DF /* GameViewController.swift in Sources */,
 				5B50DE891CD96E4300B9B4DF /* RockNode.swift in Sources */,

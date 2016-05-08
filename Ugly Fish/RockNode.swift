@@ -8,7 +8,6 @@
 
 import SpriteKit
 
-
 enum RockType:Int {
     case normalRock = 0
     case breakableRock = 1
