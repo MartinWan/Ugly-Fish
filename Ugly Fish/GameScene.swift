@@ -115,7 +115,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func update(currentTime: NSTimeInterval) {
         
         // regenerate level if needed
-        if player.position.y > CGFloat(lastLevelStartingHeight + LEVEL_HEIGHT) { // player has passed all generated objects on level
+        if player.position.y > CGFloat(lastLevelStartingHeight + LEVEL_HEIGHT) * 0.8 { // player has passed all generated objects on level
             lastLevelStartingHeight = Int(player.position.y)
             initBackgroundAtHeight(Int(player.position.y))
             initRocksAtHeight(Int(player.position.y))
@@ -217,12 +217,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         while y < height + LEVEL_HEIGHT {
             
-            
             let backgroundImage = SKSpriteNode(imageNamed: "ocean")
             backgroundImage.position = CGPoint(x: Int(size.width / 2), y: y)
             background.addChild(backgroundImage)
            
-            
             y += SPACING
         }
     }
@@ -261,7 +259,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             } else {
                 type = FoodType.specialfood
             }
-            
+
             let food = createFoodAtPosition(CGPoint(x: x, y: y), ofType: type)
             foreground.addChild(food)
             
@@ -278,7 +276,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         var sprite:SKSpriteNode
         
         if type == RockType.normalRock {
-            sprite = SKSpriteNode(imageNamed: "rock")
+            sprite = SKSpriteNode(imageNamed: "bait")
         } else {
             sprite = SKSpriteNode(imageNamed: "rockBreak")
         }
@@ -302,7 +300,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if type == FoodType.Normalfood {
             sprite = SKSpriteNode(imageNamed: "food")
         } else {
-            sprite = SKSpriteNode(imageNamed: "bait")
+            sprite = SKSpriteNode(imageNamed: "food") // need special food image and use for special food
         }
         node.addChild(sprite)
         node.physicsBody = SKPhysicsBody(circleOfRadius: sprite.size.width / 2)
