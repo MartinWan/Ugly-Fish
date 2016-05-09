@@ -172,8 +172,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         uglyFish.physicsBody!.velocity = player.physicsBody!.velocity
     }
     
-    
-    
     func didBeginContact(contact: SKPhysicsContact) {
         var otherNode:SKNode!
         
@@ -206,7 +204,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 otherNode.removeFromParent()
                 
             } else { // rockType is unbreakable
-                player.physicsBody?.velocity.dy *= 0.6
+                player.physicsBody?.velocity.dy *= 0.3
             }
         }
         
