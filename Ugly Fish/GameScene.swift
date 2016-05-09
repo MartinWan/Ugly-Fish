@@ -31,10 +31,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var score = 0
     let tapToStart = SKSpriteNode(imageNamed: "tapToStart")
     
-    /* for food, rock generation on levels */
+    // for food, rock & background generation on levels
+    // sprite nodes are generated between lastLevelStartingHeight and lastLevelStartinHeight + LEVEL_HEIGHT 
     var lastLevelStartingHeight = 0
     let LEVEL_HEIGHT = 10000
-    let SPACING = 200 // height between nodes on level
+    var SPACING = 250 // height between nodes on level
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -43,9 +44,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override init(size: CGSize) {
         super.init(size: size)
         
-        // init background & foreground
-        backgroundColor = SKColor.blueColor()  // TODO: CREATE & LOAD OCEAN GRAPHIC
-
+        // init background, foreground & hud
         initBackgroundAtHeight(0)
         addChild(background)
         addChild(foreground)
@@ -114,8 +113,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override func update(currentTime: NSTimeInterval) {
         
+        // update ugly fish horizonatal position
+        uglyFish.position.x = player.position.x
+        
         // regenerate level if needed
-        if player.position.y > CGFloat(lastLevelStartingHeight + LEVEL_HEIGHT) * 0.8 { // player has passed all generated objects on level
+        if player.position.y > CGFloat(lastLevelStartingHeight + LEVEL_HEIGHT) * 0.8 { // player has almost passed all generated objects on level
+            SPACING -= 25 // increase difficulty
             lastLevelStartingHeight = Int(player.position.y)
             initBackgroundAtHeight(Int(player.position.y))
             initRocksAtHeight(Int(player.position.y))
@@ -163,6 +166,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             return
         }
         
+        
         tapToStart.removeFromParent()
         
         player.physicsBody!.dynamic = true
@@ -205,9 +209,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 
             } else { // rockType is unbreakable
                 player.physicsBody?.velocity.dy *= 0.3
+                otherNode.removeFromParent()
             }
         }
-        
     }
     
     func initBackgroundAtHeight(height: Int) -> Void {
@@ -310,8 +314,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
 
     func endGame() {
+        // save high score
+        let userData = NSUserDefaults.standardUserDefaults()
+        let highscore = userData.integerForKey("highscore")
+        userData.setInteger(max(score, highscore), forKey: "highscore")
+        userData.synchronize()
+        
+        // transition to EndScene
         let transition = SKTransition.doorsCloseHorizontalWithDuration(1)
-        let endScene = EndScene(size: self.size, score: score)
+        let endScene = EndScene(size: self.size, score: score, highscore: userData.integerForKey("highscore"))
         self.view?.presentScene(endScene, transition: transition)
     }
     

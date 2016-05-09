@@ -14,17 +14,23 @@ class EndScene: SKScene {
         super.init(coder: aDecoder)
     }
     
-    init(size: CGSize, score: Int) {
+    init(size: CGSize, score: Int, highscore: Int) {
         super.init(size: size)
         
         let uglyFish = SKSpriteNode(imageNamed: "uglyFish")
         uglyFish.position = CGPoint(x: size.width / 2, y: size.height - 100)
         
-        let foodLabel = SKLabelNode(text: "YOU DIED. \n Score: " + String(score))
-        foodLabel.position = CGPoint(x: self.size.width / 2, y: self.size.height - uglyFish.size.height - 80)
+        let messageLabel = SKLabelNode(text: "YOU DIED.")
+        let scoreLabel = SKLabelNode(text: "Score: " + String(score))
+        let highscoreLabel = SKLabelNode(text: "Highscore: " + String(highscore))
+        messageLabel.position = CGPoint(x: self.size.width / 2, y: self.size.height - 250)
+        scoreLabel.position = CGPoint(x: size.width / 2, y: self.size.height - 300)
+        highscoreLabel.position = CGPoint(x: size.width / 2, y: self.size.height - 350)
         
         addChild(uglyFish)
-        addChild(foodLabel)
+        addChild(messageLabel)
+        addChild(scoreLabel)
+        addChild(highscoreLabel)
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
