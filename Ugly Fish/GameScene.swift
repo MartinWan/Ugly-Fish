@@ -35,7 +35,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     // sprite nodes are generated between lastLevelStartingHeight and lastLevelStartinHeight + LEVEL_HEIGHT 
     var lastLevelStartingHeight = 0
     let LEVEL_HEIGHT = 10000
-    var SPACING = 250 // height between nodes on level
+    var SPACING = 200 // height between nodes on level
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -118,11 +118,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         // regenerate level if needed
         if player.position.y > CGFloat(lastLevelStartingHeight + LEVEL_HEIGHT) * 0.8 { // player has almost passed all generated objects on level
-            SPACING -= 25 // increase difficulty
-            lastLevelStartingHeight = Int(player.position.y)
-            initBackgroundAtHeight(Int(player.position.y))
-            initRocksAtHeight(Int(player.position.y))
-            initFoodAtHeight(Int(player.position.y))
+            
+            SPACING = Int(Double(SPACING) * 0.8) // increase difficulty
+            let levelEndY = lastLevelStartingHeight + LEVEL_HEIGHT
+            lastLevelStartingHeight = Int(levelEndY)
+            
+            initBackgroundAtHeight(levelEndY)
+            initRocksAtHeight(levelEndY)
+            initFoodAtHeight(levelEndY)
         }
         
         // scroll background up if needed
@@ -283,7 +286,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             sprite = SKSpriteNode(imageNamed: "rockBreak")
         }
         node.addChild(sprite)
-        node.physicsBody = SKPhysicsBody(rectangleOfSize: sprite.size)
+        node.physicsBody = SKPhysicsBody(circleOfRadius: sprite.size.height/2)
         node.physicsBody?.dynamic = false
         node.physicsBody?.categoryBitMask = CollisionBitMask.Rock
         node.physicsBody?.collisionBitMask = 0
