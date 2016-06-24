@@ -17,10 +17,13 @@ an UGLY creature. Swim for your life. Avoid rocks and Scotty Downriggers.
 
 2. Plug in iPhone
 
-3. Select build target to your iPhone
-
-![Screenshot](/doc/installPic.png)
+3. Select build target to your iPhone (see image below)
 
 4. On keyboard press Cmd + R to build. This may require code-signing
 
 5. Add the application to "Trusted Developers" in Settings > General > Profiles or Profiles & Device Management. 
+
+![Screenshot](/doc/installPic.png)
+
+Selecting Build Target
+
