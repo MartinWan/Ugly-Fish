@@ -35,7 +35,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     // sprite nodes are generated between lastLevelStartingHeight and lastLevelStartinHeight + LEVEL_HEIGHT 
     var lastLevelStartingHeight = 0
     let LEVEL_HEIGHT = 10000
-    var SPACING = 200 // height between nodes on level
+    var SPACING = 200
+    // height between nodes on level
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

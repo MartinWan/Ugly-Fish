@@ -1,0 +1,37 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "6DF640E4C444F84A00A67DF81B86E69B34AB9B20",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "9F5D61AF59E7E3BC78F855B8C0373F6FE7B08832" : 0,
+    "6DF640E4C444F84A00A67DF81B86E69B34AB9B20" : 0,
+    "B00A54CCBE1C99B93EFD2F512C9BEAA389A06B12" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "DF335B45-C49B-42D4-A29B-964B13A451D2",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "9F5D61AF59E7E3BC78F855B8C0373F6FE7B08832" : "..",
+    "6DF640E4C444F84A00A67DF81B86E69B34AB9B20" : "Ugly%20Fish\/",
+    "B00A54CCBE1C99B93EFD2F512C9BEAA389A06B12" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Ugly Fish",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Ugly Fish.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/MartinWan\/Ugly-Fish.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6DF640E4C444F84A00A67DF81B86E69B34AB9B20"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/MartinWan\/Planar-Orbits.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9F5D61AF59E7E3BC78F855B8C0373F6FE7B08832"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/MartinWan\/Tkinter-N-Body.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B00A54CCBE1C99B93EFD2F512C9BEAA389A06B12"
+    }
+  ]
+}
