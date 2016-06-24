@@ -21,7 +21,7 @@ an UGLY creature. Swim for your life. Avoid rocks and Scotty Downriggers.
 
 4. On keyboard press Cmd + R to build. This may require code-signing
 
-5. Add the application to "Trusted Developers" in Settings > General > Profiles or Profiles & Device Management. 
+5. Add the application to "Trusted Developers" on iPhone in Settings > General > Profiles or Profiles & Device Management. 
 
 ![Screenshot](/doc/installPic.png)
 
