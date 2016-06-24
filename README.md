@@ -1,4 +1,4 @@
-# UGLY Fish
+# Ugly Fish
 
 You can fantasize about being eaten by a hideous fish no longer! 
 In this immersive game experience, play as a delicious halibut being chased by 
@@ -6,10 +6,10 @@ an UGLY creature. Swim for your life. Avoid rocks and Scotty Downriggers.
  
 ## Screenshots
 
-![Screenshot](/doc/start.jpg) ![Screenshot](/doc/early.jpg)
+![Screenshot](/doc/start.jpg)   ![Screenshot](/doc/early.jpg)
 
 
-![Screenshot](/doc/mid.jpg)   ![Screenshot](/doc/end.jpg)
+![Screenshot](/doc/mid.jpg)     ![Screenshot](/doc/end.jpg)
 
 ## Use
 
