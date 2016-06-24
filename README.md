@@ -6,16 +6,10 @@ an UGLY creature. Swim for your life. Avoid rocks and Scotty Downriggers.
  
 ## Screenshots
 
-![Screenshot](/doc/start.jpg) 
+![Screenshot](/doc/start.jpg) ![Screenshot](/doc/early.jpg)
 
 
-![Screenshot](/doc/early.jpg)
-
-
-![Screenshot](/doc/mid.jpg)   
-
-
-![Screenshot](/doc/end.jpg)
+![Screenshot](/doc/mid.jpg)   ![Screenshot](/doc/end.jpg)
 
 ## Use
 
